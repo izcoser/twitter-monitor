@@ -24,11 +24,13 @@ def download():
     max_id = int(2e18)
 
     dir = join('.', screen_name)
-    if log_tweets:
-        tweet_file = open(dir + "/" + screen_name + "-tweets", "a+", encoding="utf-8")
 
     if not isdir(dir):
         makedirs(dir)
+
+    if log_tweets:
+        tweet_file = open(dir + "/" + screen_name + "-tweets", "a+", encoding="utf-8")
+        
     while True:
         try:
             tweets = twitter.statuses.user_timeline(screen_name=screen_name, count=200, max_id=max_id, include_rts=False, include_entities=True, tweet_mode='extended')
