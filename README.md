@@ -1,7 +1,7 @@
 # Requirements
 
 ```sh
-python -m pip install twitter
+python -m pip install twitter wget
 ```
 
 # Usage
